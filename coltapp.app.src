@@ -1,0 +1,14 @@
+{application, {{appid}}, [
+	{description, "Colt application."},
+	{vsn, "1"},
+	{modules, []},
+	{registered, [ {{appid}}_sup]},
+	{applications, [
+		kernel,
+		stdlib,
+		cowboy,
+		erlydtl
+	]},
+	{mod, { {{appid}}_app, []}},
+	{env, []}
+]}.

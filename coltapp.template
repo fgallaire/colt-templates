@@ -1,0 +1,9 @@
+{variables, [{appid, "myapp"}]}.
+{template, "coltapp.makefile", "Makefile"}.
+{template, "coltapp.erlang.mk", "erlang.mk"}.
+{template, "cowboyapp.relx.config", "relx.config"}.
+{template, "coltapp.app.src", "src/{{appid}}.app.src"}.
+{template, "coltapp_app.erl", "src/{{appid}}_app.erl"}.
+{template, "cowboyapp_sup.erl", "src/{{appid}}_sup.erl"}.
+{template, "coltapp_index_http_controller.erl", "controllers/index_http_controller.erl"}.
+{file, "coltapp_index_template.html", "templates/index.html"}.

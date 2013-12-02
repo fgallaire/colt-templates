@@ -10,7 +10,7 @@ init(_Type, Req, []) ->
 
 handle(Req, State) ->
 	Headers = [{<<"content-type">>, <<"text/plain">>}],
-	Content = <<"Your Colt is shooting HTTP as text !">>,
+	Content = <<"Your Cowboy is shooting HTTP as text !">>,
 	{ok, Req2} = cowboy_req:reply(200, Headers, Content, Req),
 	{ok, Req2, State}.
 

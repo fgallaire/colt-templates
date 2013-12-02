@@ -21,17 +21,17 @@ hello_to_html(Req, State) ->
 	Body = <<"<html>
 <head>
 	<meta charset=\"utf-8\">
-	<title>Your Colt is shooting !</title>
+	<title>Your Cowboy is shooting !</title>
 </head>
 <body>
-	<p>Your Colt is shooting REST as HTML !</p>
+	<p>Your Cowboy is shooting REST as HTML !</p>
 </body>
 </html>">>,
 	{Body, Req, State}.
 
 hello_to_json(Req, State) ->
-	Body = <<"{\"rest\": \"Your Colt is shooting REST as JSON !\"}">>,
+	Body = <<"{\"rest\": \"Your Cowboy is shooting REST as JSON !\"}">>,
 	{Body, Req, State}.
 
 hello_to_text(Req, State) ->
-	{<<"Your Colt is shooting REST as text!">>, Req, State}.
+	{<<"Your Cowboy is shooting REST as text!">>, Req, State}.

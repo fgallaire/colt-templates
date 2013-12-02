@@ -1,0 +1,8 @@
+{variables, [{appid, "myapp"}]}.
+{template, "cowboyapp.makefile", "Makefile"}.
+{template, "cowboyapp.erlang.mk", "erlang.mk"}.
+{template, "cowboyapp.relx.config", "relx.config"}.
+{template, "cowboyapp.app.src", "src/{{appid}}.app.src"}.
+{template, "cowboyapp_app.erl", "src/{{appid}}_app.erl"}.
+{template, "cowboyapp_sup.erl", "src/{{appid}}_sup.erl"}.
+{template, "cowboyapp_index_http_handler.erl", "src/index_http_handler.erl"}.

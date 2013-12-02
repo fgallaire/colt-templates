@@ -1,0 +1,13 @@
+{application, {{appid}}, [
+	{description, "Cowboy application."},
+	{vsn, "1"},
+	{modules, []},
+	{registered, [ {{appid}}_sup]},
+	{applications, [
+		kernel,
+		stdlib,
+		cowboy
+	]},
+	{mod, { {{appid}}_app, []}},
+	{env, []}
+]}.

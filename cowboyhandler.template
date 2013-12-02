@@ -1,0 +1,2 @@
+{variables, [{handlerid, "myhandler"}, {handlertype, "http"}]}.
+{template, "cowboyhandler_{{handlertype}}.erl", "src/{{handlerid}}_{{handlertype}}_handler.erl"}.

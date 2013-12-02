@@ -1,0 +1,2 @@
+{variables, [{contid, "mycont"}, {conttype, "http"}]}.
+{template, "coltcont_{{conttype}}.erl", "controllers/{{contid}}_{{conttype}}_controller.erl"}.

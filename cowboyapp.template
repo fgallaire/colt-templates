@@ -5,8 +5,9 @@
 {template, "cowboyapp.app.src", "src/{{appid}}.app.src"}.
 {template, "cowboyapp_app_{{handlertype}}.erl", "src/{{appid}}_app.erl"}.
 {template, "cowboyapp_sup.erl", "src/{{appid}}_sup.erl"}.
-{template, "cowboyhandler_{{handlertype}}.erl", "src/{{handlerid}}_{{handlertype}}_handler.erl"}.
-{'case', handlertype, "static", {file, "cowboyapp_static_index.html", "priv/index.html"}}.
-{'case', handlertype, "eventsource", {file, "cowboyapp_eventsource_index.html", "priv/index.html"}}.
-{'case', handlertype, "websocket", [{file, "cowboyapp_websocket_index.html", "priv/index.html"},
+{'case', handlertype, ["http", "rest", "eventsource", "websocket"], {template, "cowboyhandler_{{handlertype}}.erl", "src/{{handlerid}}_{{handlertype}}_handler.erl"}}.
+{'case', handlertype, ["static"], [{file, "cowboyapp_static_index.html", "priv/index.html"},
+                                   {file, "cowboyapp_cowboy.png", "priv/static/cowboy.png"}]}.
+{'case', handlertype, ["eventsource"], {file, "cowboyapp_eventsource_index.html", "priv/index.html"}}.
+{'case', handlertype, ["websocket"], [{file, "cowboyapp_websocket_index.html", "priv/index.html"},
                                     {file, "cowboyapp_jquery.min.js", "priv/static/jquery.min.js"}]}.

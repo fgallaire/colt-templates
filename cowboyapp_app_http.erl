@@ -11,7 +11,7 @@
 start(_Type, _Args) ->
 	Dispatch = cowboy_router:compile([
 		{'_', [
-			{"/", index_http_handler, []}
+			{"/", {{handlerid}}_{{handlertype}}_handler, []}
 		]}
 	]),
 	{ok, _} = cowboy:start_http(http, 100, [{port, 8080}], [

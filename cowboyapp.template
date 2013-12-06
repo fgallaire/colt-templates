@@ -1,8 +1,12 @@
-{variables, [{appid, "myapp"}]}.
+{variables, [{appid, "myapp"}, {handlerid, "index"}, {handlertype, "http"}]}.
 {template, "cowboyapp.makefile", "Makefile"}.
 {template, "cowboyapp.erlang.mk", "erlang.mk"}.
 {template, "cowboyapp.relx.config", "relx.config"}.
 {template, "cowboyapp.app.src", "src/{{appid}}.app.src"}.
-{template, "cowboyapp_app.erl", "src/{{appid}}_app.erl"}.
+{template, "cowboyapp_app_{{handlertype}}.erl", "src/{{appid}}_app.erl"}.
 {template, "cowboyapp_sup.erl", "src/{{appid}}_sup.erl"}.
-{template, "cowboyapp_index_http_handler.erl", "src/index_http_handler.erl"}.
+{template, "cowboyhandler_{{handlertype}}.erl", "src/{{handlerid}}_{{handlertype}}_handler.erl"}.
+{'case', handlertype, "static", {file, "cowboyapp_static_index.html", "priv/index.html"}}.
+{'case', handlertype, "eventsource", {file, "cowboyapp_eventsource_index.html", "priv/index.html"}}.
+{'case', handlertype, "websocket", [{file, "cowboyapp_websocket_index.html", "priv/index.html"},
+                                    {file, "cowboyapp_jquery.min.js", "priv/static/jquery.min.js"}]}.

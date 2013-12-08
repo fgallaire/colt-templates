@@ -6,4 +6,4 @@
 {template, "coltapp_app.erl", "src/{{appid}}_app.erl"}.
 {template, "cowboyapp_sup.erl", "src/{{appid}}_sup.erl"}.
 {template, "coltapp_index_http_controller.erl", "controllers/index_http_controller.erl"}.
-{file, "coltapp_index_template.html", "templates/index.html"}.
+{file, "coltapp_template.html", "templates/index.html"}.

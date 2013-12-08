@@ -9,8 +9,8 @@ init(_Type, Req, []) ->
 	{ok, Req, undefined}.
 
 handle(Req, State) ->
-	Headers = [{<<"content-type">>, <<"text/plain">>}],
-	Content = <<"Your Colt is shooting HTTP as text !">>,
+	Headers = [{<<"content-type">>, <<"text/html">>}],
+	{ok, Content} = {{contid}}_template:render([{title, "Your Colt is shooting !"}, {text, "Your Colt is shooting HTTP as HTML !"}]),
 	{ok, Req2} = cowboy_req:reply(200, Headers, Content, Req),
 	{ok, Req2, State}.
 

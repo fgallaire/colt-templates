@@ -1,2 +1,3 @@
 {variables, [{contid, "mycont"}, {conttype, "http"}]}.
 {template, "coltcont_{{conttype}}.erl", "controllers/{{contid}}_{{conttype}}_controller.erl"}.
+{'case', conttype, ["http", "rest"], {file, "coltapp_template.html", "templates/{{contid}}.html"}}.

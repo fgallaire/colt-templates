@@ -1,9 +1,11 @@
-{variables, [{appid, "myapp"}]}.
+{variables, [{appid, "myapp"}, {contid, "index"}, {conttype, "http"}]}.
 {template, "coltapp.makefile", "Makefile"}.
 {template, "coltapp.erlang.mk", "erlang.mk"}.
 {template, "cowboyapp.relx.config", "relx.config"}.
 {template, "coltapp.app.src", "src/{{appid}}.app.src"}.
-{template, "coltapp_app.erl", "src/{{appid}}_app.erl"}.
+{template, "coltapp_app_{{conttype}}.erl", "src/{{appid}}_app.erl"}.
 {template, "cowboyapp_sup.erl", "src/{{appid}}_sup.erl"}.
-{template, "coltapp_index_http_controller.erl", "controllers/index_http_controller.erl"}.
-{file, "coltapp_template.html", "templates/index.html"}.
+{'case', conttype, ["http", "rest", "eventsource", "websocket"], {template, "coltcont_{{conttype}}.erl", "controllers/{{contid}}_{{conttype}}_controller.erl"}}.
+{'case', conttype, ["http", "rest"], {file, "coltapp_template.html", "templates/{{contid}}.html"}}.
+{'case', conttype, ["eventsource", "websocket"], {file, "cowboyapp_{{conttype}}_index.html", "priv/index.html"}}.
+{'case', conttype, ["websocket"], {file, "cowboyapp_jquery.min.js", "priv/static/jquery.min.js"}}.
